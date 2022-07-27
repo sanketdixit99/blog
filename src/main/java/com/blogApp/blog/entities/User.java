@@ -1,6 +1,15 @@
 package com.blogApp.blog.entities;
 
+<<<<<<< HEAD
 import javax.persistence.*;
+=======
+import lombok.Getter;
+import lombok.Setter;
+
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
+>>>>>>> f16adeb (user and categories and post APIs)
 
 @Entity
 @Table(name = "users")
@@ -16,6 +25,13 @@ public class User{
     private String password;
     private String about;
 
+<<<<<<< HEAD
+=======
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Post> posts = new ArrayList<>();
+
+
+>>>>>>> f16adeb (user and categories and post APIs)
     public int getId() {
         return id;
     }
