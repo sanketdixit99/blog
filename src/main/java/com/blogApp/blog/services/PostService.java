@@ -1,6 +1,7 @@
 package com.blogApp.blog.services;
 
 import com.blogApp.blog.payloads.PostDto;
+import com.blogApp.blog.payloads.PostResponse;
 
 import java.util.List;
 
@@ -16,15 +17,21 @@ public interface PostService {
     void deletePost(Integer postId);
 
     //GET All method
-    List<PostDto> getAllPost();
+    PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDir);
 
     //GET one method
     PostDto getPost(Integer postId);
 
     //GET All by User
-    List<PostDto> getAllByUser(Integer userId);
+    List<PostDto> getAllPostByUser(Integer userId);
 
     //GET All by category
-    List<PostDto> getAllByCategory(Integer categoryId);
+    List<PostDto> getAllPostByCategory(Integer categoryId);
+
+    //search Posts
+    List<PostDto> searchPosts(String keyword);
+
+    //search posts by content
+    List<PostDto> searchPostsByContent(String content);
 
 }
